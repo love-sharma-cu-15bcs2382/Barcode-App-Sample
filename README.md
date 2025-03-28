@@ -1,1 +1,1 @@
-Both projects hae readme under their specified folders
+Both projects has readme files under their specified folders
