@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Product List</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!pageLoader; else loading">
+    <!-- Always show this button to navigate to Main Menu at the top -->
+     <div class="go-back-button-container">
+        <ion-button onkeypress="" expand="full" color="secondary" (click)="goToMainMenu()">Go to Main Menu</ion-button>
+     </div>
+
+    <!-- Condition to check if products are empty -->
+    <div *ngIf="products.length === 0; else productList">
+        <div class="no-data-container">
+            <ion-text color="medium">
+                <h3>No products available</h3>
+            </ion-text>
+        </div>
+    </div>
+
+    <!-- Product List if products array is not empty -->
+    <ng-template #productList>
+        <ion-card *ngFor="let product of products">
+            <ion-card-header>
+                <ion-card-title>Barcode: {{ product.Barcode }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <p>Price: {{ product.Price && product.Price > 0 ? product.Price : 'N/A' }}</p>
+                <p>Product Name: {{ product.Name || 'N/A' }}</p>
+            </ion-card-content>
+
+            <ion-footer>
+                <ion-button onkeypress="" (click)="editProduct(product.Id!)" color="primary">Edit</ion-button>
+                <ion-button onkeypress="" (click)="deleteProduct(product.Id!)" color="danger">Delete</ion-button>
+            </ion-footer>
+        </ion-card>
+    </ng-template>
+</ion-content>
+
+<ng-template #loading>
+    <ion-content>
+        <div class="loader-container">
+            <ion-spinner name="crescent" color="primary"></ion-spinner>
+        </div>
+    </ion-content>
+</ng-template>

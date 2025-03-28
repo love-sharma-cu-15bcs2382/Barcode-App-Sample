@@ -1,0 +1,53 @@
+.primary-wrapper {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    --background: white; /* Ensure the header background is solid */
+    padding-top: env(safe-area-inset-top); /* Add padding for the status bar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to header for separation */
+}
+
+.ion-content-style {
+    --background: white;
+    height: 100vh;
+    --offset-top: env(safe-area-inset-top); /* Push content below the status bar */
+
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        width: 100%;
+        height: inherit;
+        gap: 20px; /* Add gap between buttons */
+    }
+
+    .button-style {
+        width: 90%; /* Make buttons responsive and fill available width */
+        max-width: 350px; /* Ensure buttons don't grow too large */
+        padding: 15px;
+        font-size: 16px;
+        color: white;
+        background-color: #3880ff; /* Use primary color */
+        border-radius: 50px; /* Rounded buttons */
+        border: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow to make buttons look lifted */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        /* Hover effect */
+        &:hover {
+            background-color: #2a65d0; /* Darken the button on hover */
+            transform: translateY(-4px); /* Lift the button slightly */
+        }
+
+        /* Focus effect */
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 128, 255, 0.5); /* Add a focus shadow */
+        }
+    }
+}

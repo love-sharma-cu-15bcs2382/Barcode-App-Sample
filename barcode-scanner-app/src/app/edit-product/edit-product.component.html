@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Edit Product</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!pageLoader; else loading">
+    <ion-button onkeypress="" expand="full" color="secondary" (click)="goBackToProducts()">Go to Products Page</ion-button>
+
+    <div class="card-container">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Edit Product Details</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <!-- Name Input -->
+                <ion-item>
+                    <ion-label position="stacked">Name</ion-label>
+                    <ion-input [(ngModel)]="product.Name" type="text" placeholder="Enter product name"></ion-input>
+                </ion-item>
+
+                <!-- Price Input -->
+                <ion-item>
+                    <ion-label position="stacked">Price</ion-label>
+                    <ion-input [(ngModel)]="product.Price" type="number" placeholder="Enter product price"></ion-input>
+                </ion-item>
+
+                <!-- Barcode Input -->
+                <ion-item>
+                    <ion-label position="stacked">Barcode</ion-label>
+                    <ion-input [(ngModel)]="product.Barcode" type="text"
+                        placeholder="Enter product barcode"></ion-input>
+                </ion-item>
+            </ion-card-content>
+
+            <!-- Save Button -->
+            <ion-footer>
+                <ion-button expand="full" (click)="saveProduct()" color="primary" onkeypress="">Save</ion-button>
+            </ion-footer>
+        </ion-card>
+    </div>
+</ion-content>
+
+<ng-template #loading>
+    <ion-content>
+        <div class="loader-container">
+            <ion-spinner name="crescent" color="primary"></ion-spinner>
+        </div>
+    </ion-content>
+</ng-template>

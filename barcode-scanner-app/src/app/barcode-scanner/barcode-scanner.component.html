@@ -1,0 +1,14 @@
+<div class="primary-wrapper">
+    <ion-header class="header">
+        <ion-toolbar>
+            <ion-title>Barcode Scanner</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content [fullscreen]="true" class="ion-content-style">
+        <div class="button-wrapper">
+            <ion-button (click)="scanBarcode()" onkeypress="" class="button-style" expand="full">Scan Barcode/QR</ion-button>
+            <ion-button (click)="goToAddProduct()" onkeypress="" class="button-style" expand="full">Add Barcode/QR</ion-button>
+            <ion-button (click)="goToViewBarCode()" onkeypress="" class="button-style" expand="full">View Barcodes/QR</ion-button>
+        </div>
+    </ion-content>
+</div>

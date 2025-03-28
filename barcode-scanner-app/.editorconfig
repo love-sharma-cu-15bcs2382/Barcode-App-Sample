@@ -1,0 +1,30 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Apply to all files by default
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 2-space indentation for TypeScript, JavaScript, and TSX/JSX files
+[*.{ts,js,tsx,jsx}]
+indent_style = space
+indent_size = 4
+
+# 4-space indentation for HTML and SCSS files (common in Ionic/Angular)
+[*.{html,scss}]
+indent_style = space
+indent_size = 4
+
+# JSON files with 2-space indentation
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
